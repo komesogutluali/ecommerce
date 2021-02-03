@@ -16,10 +16,7 @@
 	<link href="${pageContext.request.contextPath}/resources/css/animate.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/css/responsive.css" rel="stylesheet">
-	<!--[if lt IE 9]>
-	<script src="${pageContext.request.contextPath}/resources/js/html5shiv.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/respond.min.js"></script>
-	<![endif]-->
+
 	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/ico/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-144-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/ico/apple-touch-icon-114-precomposed.png">
