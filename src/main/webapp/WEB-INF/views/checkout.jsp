@@ -56,7 +56,7 @@
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.jsp"><img src="images/home/logo.png" alt="" /></a>
+							<a href="<c:url value="/index"/>"><img src="${pageContext.request.contextPath}/resources/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right clearfix">
 							<div class="btn-group">
@@ -87,9 +87,9 @@
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.jsp"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.jsp"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="<c:url value="/shop/checkout"/>"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="<c:url value="/shop/cart"/>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="<c:url value="/shop/login"/>"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
