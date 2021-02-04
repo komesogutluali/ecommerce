@@ -2,17 +2,18 @@ package org.ecommerce.controllers;
 
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value = "/index")
 public class HomeController {
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Model model)
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView home(ModelAndView mav)
     {
-
-        return "index";
+        mav=new ModelAndView("index");
+        return mav;
     }
 
 

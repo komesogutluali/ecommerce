@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,7 +87,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="checkout.jsp"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="cart.jsp"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="login.jsp"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
@@ -109,23 +111,22 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.jsp">Home</a></li>
+								<li><a href="<c:url value="/index"/>">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.jsp">Products</a></li>
-										<li><a href="product-details.jsp">Product Details</a></li> 
-										<li><a href="checkout.html" class="active">Checkout</a></li> 
-										<li><a href="cart.jsp">Cart</a></li> 
-										<li><a href="login.jsp">Login</a></li> 
-                                    </ul>
-                                </li> 
+									<ul role="menu" class="sub-menu">
+										<li><a href="shop" class="active">Products</a></li>
+										<li><a href="<c:url value="/shop/product-details"/>">Product Details</a></li>
+										<li><a href="<c:url value="/shop/checkout"/>">Checkout</a></li>
+										<li><a href="<c:url value="/shop/cart"/>">Cart</a></li>
+										<li><a href="<c:url value="/shop/login"/>">Login</a></li>
+									</ul>
+								</li>
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="blog.html">Blog List</a></li>
 										<li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
-                                </li> 
-								<li><a href="404.jsp">404</a></li>
+                                </li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
