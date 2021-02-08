@@ -17,6 +17,7 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
+  <!-- DataSource -->
 
   <servlet-mapping>
     <servlet-name>EcommerceWeb</servlet-name>

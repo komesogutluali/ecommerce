@@ -9,32 +9,32 @@ public class ItemSizeL {
     @Column(name = "item_size_L_id")
     private Integer itemSizeLId;
 
-    @Column(name = "30")
-    private Integer 30;
+    @Column(name = "s30")
+    private Integer s30;
 
-    @Column(name = "31")
-    private Integer 31;
+    @Column(name = "s31")
+    private Integer s31;
 
-    @Column(name = "32")
-    private Integer 32;
+    @Column(name = "s32")
+    private Integer s32;
 
-    @Column(name = "33")
-    private Integer 33;
+    @Column(name = "s33")
+    private Integer s33;
 
-    @Column(name = "34")
-    private Integer 34;
+    @Column(name = "s34")
+    private Integer s34;
 
-    @Column(name = "35")
-    private Integer 35;
+    @Column(name = "s35")
+    private Integer s35;
 
-    @Column(name = "36")
-    private Integer 36;
+    @Column(name = "s36")
+    private Integer s36;
 
-    @Column(name = "37")
-    private Integer 37;
+    @Column(name = "s37")
+    private Integer s37;
 
-    @Column(name = "38")
-    private Integer 38;
+    @Column(name = "s38")
+    private Integer s38;
 
     @Column(name = "item_id")
     private Integer itemId;
@@ -47,76 +47,76 @@ public class ItemSizeL {
         this.itemSizeLId = itemSizeLId;
     }
 
-    public Integer get30() {
-        return this.30;
+    public Integer getS30() {
+        return this.s30;
     }
 
-    public void set30(Integer 30) {
-        this.30 = 30;
+    public void setS30(Integer s30) {
+        this.s30 = s30;
     }
 
-    public Integer get31() {
-        return this.31;
+    public Integer getS31() {
+        return this.s31;
     }
 
-    public void set31(Integer 31) {
-        this.31 = 31;
+    public void setS31(Integer s31) {
+        this.s31 = s31;
     }
 
-    public Integer get32() {
-        return this.32;
+    public Integer getS32() {
+        return this.s32;
     }
 
-    public void set32(Integer 32) {
-        this.32 = 32;
+    public void setS32(Integer s32) {
+        this.s32 = s32;
     }
 
-    public Integer get33() {
-        return this.33;
+    public Integer getS33() {
+        return this.s33;
     }
 
-    public void set33(Integer 33) {
-        this.33 = 33;
+    public void setS33(Integer s33) {
+        this.s33 = s33;
     }
 
-    public Integer get34() {
-        return this.34;
+    public Integer getS34() {
+        return this.s34;
     }
 
-    public void set34(Integer 34) {
-        this.34 = 34;
+    public void setS34(Integer s34) {
+        this.s34 = s34;
     }
 
-    public Integer get35() {
-        return this.35;
+    public Integer getS35() {
+        return this.s35;
     }
 
-    public void set35(Integer 35) {
-        this.35 = 35;
+    public void setS35(Integer s35) {
+        this.s35 = s35;
     }
 
-    public Integer get36() {
-        return this.36;
+    public Integer getS36() {
+        return this.s36;
     }
 
-    public void set36(Integer 36) {
-        this.36 = 36;
+    public void setS36(Integer s36) {
+        this.s36 = s36;
     }
 
-    public Integer get37() {
-        return this.37;
+    public Integer getS37() {
+        return this.s37;
     }
 
-    public void set37(Integer 37) {
-        this.37 = 37;
+    public void setS37(Integer s37) {
+        this.s37 = s37;
     }
 
-    public Integer get38() {
-        return this.38;
+    public Integer getS38() {
+        return this.s38;
     }
 
-    public void set38(Integer 38) {
-        this.38 = 38;
+    public void setS38(Integer s38) {
+        this.s38 = s38;
     }
 
     public Integer getItemId() {

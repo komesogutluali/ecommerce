@@ -1,6 +1,7 @@
 package org.ecommerce.models;
 
 import javax.persistence.*;
+import java.sql.Time;
 
 @Entity
 @Table(name = "comment")
@@ -24,7 +25,7 @@ public class Comment {
     private Integer itemId;
 
     @Column(name = "comment_time")
-    private null commentTime;
+    private Time commentTime;
 
     @Column(name = "comment_date")
     private java.sql.Date commentDate;
@@ -77,11 +78,11 @@ public class Comment {
         this.itemId = itemId;
     }
 
-    public null getCommentTime() {
+    public Time getCommentTime() {
         return this.commentTime;
     }
 
-    public void setCommentTime(null commentTime) {
+    public void setCommentTime(Time commentTime) {
         this.commentTime = commentTime;
     }
 
