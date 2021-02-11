@@ -1,4 +1,4 @@
-package org.ecommerce.models;
+package org.ecommerce.models.entity;
 
 import javax.persistence.*;
 

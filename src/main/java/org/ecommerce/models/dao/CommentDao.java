@@ -1,6 +1,7 @@
 package org.ecommerce.models.dao;
 
-import org.ecommerce.models.Comment;
+
+import org.ecommerce.models.entity.Comment;
 
 import java.util.List;
 

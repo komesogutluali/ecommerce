@@ -1,6 +1,7 @@
 package org.ecommerce.models.dao;
 
-import org.ecommerce.models.ItemColor;
+
+import org.ecommerce.models.entity.ItemColor;
 
 import java.util.List;
 

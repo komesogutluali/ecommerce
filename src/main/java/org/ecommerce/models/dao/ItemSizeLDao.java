@@ -1,7 +1,8 @@
 package org.ecommerce.models.dao;
 
 
-import org.ecommerce.models.ItemSizeL;
+
+import org.ecommerce.models.entity.ItemSizeL;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.ecommerce.models;
+package org.ecommerce.models.entity;
 
 import javax.persistence.*;
 import java.sql.Time;
@@ -6,6 +6,7 @@ import java.sql.Time;
 @Entity
 @Table(name = "comment")
 public class Comment {
+    @Id
     @Column(name = "comment_id")
     private Integer commentId;
 

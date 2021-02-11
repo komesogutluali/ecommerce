@@ -1,7 +1,8 @@
 package org.ecommerce.models.dao;
 
 
-import org.ecommerce.models.ItemsCategory;
+
+import org.ecommerce.models.entity.ItemsCategory;
 
 import java.util.List;
 
