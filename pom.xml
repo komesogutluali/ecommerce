@@ -41,7 +41,11 @@
       <artifactId>spring-web</artifactId>
       <version>5.2.9.RELEASE</version>
     </dependency>
-    <!-- Servlet -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.2.9.RELEASE</version>
+    </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>

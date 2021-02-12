@@ -1,28 +1,21 @@
-package org.ecommerce.models.dao;
+package org.ecommerce.services;
 
+import org.ecommerce.models.dao.MembersDao;
 import org.ecommerce.models.entity.Members;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
+public class MembersService implements ServiceI<Members> {
 
-@Repository
-@Transactional
-public class MembersDao implements Dao<Members>{
     @Autowired
-   private SessionFactory sessionFactory;
-
+    private   MembersDao membersDao;
     @Override
     public int Save(Members members) {
-
-        Session s=sessionFactory.openSession();
-        s.save(members);
+        membersDao.Save(members);
         return 0;
     }
 
