@@ -1,11 +1,12 @@
 package org.ecommerce.models.dao;
 
 
+import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.CategoriesBrands;
 
 import java.util.List;
 
-public class CategoriesBrandsDao implements Dao<CategoriesBrands>{
+public class CategoriesBrandsDao implements Dao<CategoriesBrands> {
     @Override
     public int Save(CategoriesBrands categoriesBrands) {
         return 0;

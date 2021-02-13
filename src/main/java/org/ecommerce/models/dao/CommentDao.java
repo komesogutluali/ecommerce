@@ -1,12 +1,13 @@
 package org.ecommerce.models.dao;
 
 
+import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.Comment;
 
 import java.util.List;
 
 
-public class CommentDao implements Dao<Comment>{
+public class CommentDao implements Dao<Comment> {
 
     /*
 

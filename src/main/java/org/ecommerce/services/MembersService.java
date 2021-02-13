@@ -2,9 +2,9 @@ package org.ecommerce.services;
 
 import org.ecommerce.models.dao.MembersDao;
 import org.ecommerce.models.entity.Members;
+import org.ecommerce.services.interfaces.ServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

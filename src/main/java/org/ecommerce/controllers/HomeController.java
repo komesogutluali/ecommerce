@@ -13,19 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/index")
 public class HomeController {
-    @Autowired
-   private MembersService membersService;
+
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView home(ModelAndView mav)
     {
 
         mav=new ModelAndView("index");
-        Members m=new Members();
-        m.setMembersEmail("asdsadsad");
-        m.setMembersName("sssssss");
-        m.setMembersPassword("asdsadsaas");
-        m.setMembersNumber("fghgfhghg");
-        membersService.Save(m);
+
         return mav;
     }
 

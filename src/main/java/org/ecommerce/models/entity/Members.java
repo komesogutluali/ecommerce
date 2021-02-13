@@ -1,7 +1,8 @@
 package org.ecommerce.models.entity;
 
-import javax.persistence.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
+import javax.persistence.*;
 @Entity
 @Table(name = "members")
 public class Members {

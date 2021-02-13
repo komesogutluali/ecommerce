@@ -2,11 +2,12 @@ package org.ecommerce.models.dao;
 
 
 
+import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.ItemSizeL;
 
 import java.util.List;
 
-public class ItemSizeLDao implements Dao<ItemSizeL>{
+public class ItemSizeLDao implements Dao<ItemSizeL> {
 
     @Override
     public int Save(ItemSizeL itemSizeL) {

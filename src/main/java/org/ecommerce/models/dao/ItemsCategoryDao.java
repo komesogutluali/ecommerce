@@ -2,11 +2,12 @@ package org.ecommerce.models.dao;
 
 
 
+import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.ItemsCategory;
 
 import java.util.List;
 
-public class ItemsCategoryDao implements Dao<ItemsCategory>{
+public class ItemsCategoryDao implements Dao<ItemsCategory> {
 
     @Override
     public int Save(ItemsCategory itemsCategory) {
