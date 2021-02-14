@@ -3,9 +3,12 @@ package org.ecommerce.models.dao;
 
 import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.ItemSizeW;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Repository
+@Transactional
 public class ItemSizeWDao implements Dao<ItemSizeW> {
 
     @Override

@@ -3,9 +3,12 @@ package org.ecommerce.models.dao;
 
 import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.ItemColor;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Repository
+@Transactional
 public class ItemColorDao implements Dao<ItemColor> {
     @Override
     public int Save(ItemColor itemColor) {

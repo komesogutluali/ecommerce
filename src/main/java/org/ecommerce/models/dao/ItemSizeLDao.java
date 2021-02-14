@@ -4,9 +4,12 @@ package org.ecommerce.models.dao;
 
 import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.ItemSizeL;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Repository
+@Transactional
 public class ItemSizeLDao implements Dao<ItemSizeL> {
 
     @Override

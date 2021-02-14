@@ -1,5 +1,4 @@
 package org.ecommerce.controllers;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.ecommerce.models.entity.Members;
 import org.ecommerce.services.MembersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 
 
 @Controller
