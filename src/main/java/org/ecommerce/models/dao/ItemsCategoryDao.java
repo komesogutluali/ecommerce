@@ -4,6 +4,9 @@ package org.ecommerce.models.dao;
 
 import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.ItemsCategory;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +15,9 @@ import java.util.List;
 @Transactional
 public class ItemsCategoryDao implements Dao<ItemsCategory> {
 
+    @Autowired
+    SessionFactory sessionFactory;
+    Session s;
     @Override
     public int Save(ItemsCategory itemsCategory) {
         return 0;
@@ -29,6 +35,8 @@ public class ItemsCategoryDao implements Dao<ItemsCategory> {
 
     @Override
     public List<ItemsCategory> getAll() {
-        return null;
+        s=sessionFactory.openSession();
+
+        return s.createQuery("from ItemsCategory").list();
     }
 }

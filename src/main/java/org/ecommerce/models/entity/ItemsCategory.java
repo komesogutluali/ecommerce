@@ -8,7 +8,6 @@ public class ItemsCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-
     @Column(name = "category_id")
     private Integer categoryId;
 

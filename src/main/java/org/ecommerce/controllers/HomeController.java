@@ -1,10 +1,6 @@
 package org.ecommerce.controllers;
 
-
-import org.ecommerce.models.dao.MembersDao;
-import org.ecommerce.models.entity.Members;
 import org.ecommerce.services.ItemsService;
-import org.ecommerce.services.MembersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +16,6 @@ public class HomeController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView home(ModelAndView mav)
     {
-
         mav=new ModelAndView("index");
         mav.addObject("itemsDtos",itemsService.getAll());
         return mav;
@@ -28,3 +23,4 @@ public class HomeController {
 
 
 }
+
