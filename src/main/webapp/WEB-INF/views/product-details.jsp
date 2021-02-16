@@ -544,7 +544,7 @@
 						
 						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 							<div class="carousel-inner">
-								<div class="item active">	
+								<div class="item active">
 									<div class="col-sm-4">
 										<div class="product-image-wrapper">
 											<div class="single-products">
@@ -558,6 +558,7 @@
 										</div>
 									</div>
 									<div class="col-sm-4">
+
 										<div class="product-image-wrapper">
 											<div class="single-products">
 												<div class="productinfo text-center">

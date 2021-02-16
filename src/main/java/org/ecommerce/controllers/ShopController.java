@@ -1,5 +1,7 @@
 package org.ecommerce.controllers;
 import org.ecommerce.models.entity.Members;
+import org.ecommerce.services.CategoriesBrandsService;
+import org.ecommerce.services.ItemsService;
 import org.ecommerce.services.MembersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class ShopController {
     @Autowired
     private MembersService membersService;
+    @Autowired
+    private CategoriesBrandsService categoriesBrandsService;
+    @Autowired
+    ItemsService itemsService;
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView shop(ModelAndView mav)
     {
@@ -25,6 +31,8 @@ public class ShopController {
     @RequestMapping(value = "/product-details", method = RequestMethod.GET)
     public ModelAndView product_details(ModelAndView mav) {
         mav=new ModelAndView("product-details");
+        mav.addObject("itemsDtos",itemsService.getAll());
+        mav.addObject("CategorysBrandsDto",categoriesBrandsService.getCategorysBrands());
         return mav;
     }
     @RequestMapping(value = "/checkout",method = RequestMethod.GET)

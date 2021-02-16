@@ -1,16 +1,15 @@
 package org.ecommerce.dto;
 
+import org.ecommerce.models.Brand;
+
 import java.util.List;
 
 public class CategorysBrandsDto {
-    public Integer brandId;
     public Integer categoryId;
     public String categoryName;
-    public List<String> brandNameList;
-    public CategorysBrandsDto(Integer brandId, Integer categoryId, String categoryName, List<String> brandNameList) {
-        this.brandId = brandId;
+    public List<Brand> brands;
+    public CategorysBrandsDto(Integer categoryId, String categoryName) {
         this.categoryId = categoryId;
         this.categoryName = categoryName;
-        this.brandNameList = brandNameList;
     }
 }

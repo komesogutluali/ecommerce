@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
 @Repository
 @Transactional
@@ -39,4 +40,5 @@ public class ItemsCategoryDao implements Dao<ItemsCategory> {
 
         return s.createQuery("from ItemsCategory").list();
     }
+
 }

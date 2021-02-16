@@ -28,6 +28,6 @@ public class ItemsCategoryService implements ServiceI<ItemsCategory> {
 
     @Override
     public List<ItemsCategory> getAll() {
-        return null;
+        return itemsCategoryDao.getAll();
     }
 }

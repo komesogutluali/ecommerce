@@ -215,6 +215,29 @@
 				<div class="left-sidebar">
 					<h2>Category</h2>
 					<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+						<c:forEach items="${CategorysBrandsDto}" var="cbd">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordian" href="#${cbd.categoryName}">
+										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+										${cbd.categoryName}
+									</a>
+								</h4>
+							</div>
+							<div id="${cbd.categoryName}" class="panel-collapse collapse">
+								<div class="panel-body">
+									<ul>
+										<c:forEach items="${cbd.brands}" var="brand">
+										<li><a href="#">${brand.brandName} </a></li>
+										</c:forEach>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						</c:forEach>
+
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
@@ -236,6 +259,8 @@
 								</div>
 							</div>
 						</div>
+
+
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">

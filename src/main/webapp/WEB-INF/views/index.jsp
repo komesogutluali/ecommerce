@@ -215,27 +215,28 @@
 				<div class="left-sidebar">
 					<h2>Category</h2>
 					<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+						<c:forEach items="${CategorysBrandsDto}" var="cbd">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordian" href="#deneme">
+									<a data-toggle="collapse" data-parent="#accordian" href="#${cbd.categoryName}">
 										<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-										Sportswear
+										${cbd.categoryName}
 									</a>
 								</h4>
 							</div>
-							<div id="deneme" class="panel-collapse collapse">
+							<div id="${cbd.categoryName}" class="panel-collapse collapse">
 								<div class="panel-body">
 									<ul>
-										<li><a href="#">Nike </a></li>
-										<li><a href="#">Under Armour </a></li>
-										<li><a href="#">Adidas </a></li>
-										<li><a href="#">Puma</a></li>
-										<li><a href="#">ASICS </a></li>
+										<c:forEach items="${cbd.brands}" var="brand">
+										<li><a href="#">${brand.brandName} </a></li>
+										</c:forEach>
 									</ul>
 								</div>
 							</div>
 						</div>
+
+						</c:forEach>
 
 						<div class="panel panel-default">
 							<div class="panel-heading">
