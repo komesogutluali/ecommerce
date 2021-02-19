@@ -24,12 +24,15 @@ public class HomeController {
     ItemsCategoryService  itemsCategoryService;
     @Autowired
     CategoriesBrandsService categoriesBrandsService;
+    @Autowired
+    ItemsBrandsService itemsBrandsService;
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView home(ModelAndView mav)
     {
         mav=new ModelAndView("index");
         mav.addObject("itemsDtos",itemsService.getAll());
         mav.addObject("CategorysBrandsDto", categoriesBrandsService.getCategorysBrands());
+        mav.addObject("brandsCount",itemsBrandsService.getBrandsCount());
         return mav;
     }
 

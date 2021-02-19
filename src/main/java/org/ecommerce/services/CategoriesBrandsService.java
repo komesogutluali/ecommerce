@@ -1,6 +1,7 @@
 package org.ecommerce.services;
 
 import org.ecommerce.dto.CategorysBrandsDto;
+import org.ecommerce.models.Brand;
 import org.ecommerce.models.dao.CategoriesBrandsDao;
 import org.ecommerce.models.dao.ItemsBrandsDao;
 import org.ecommerce.models.dao.ItemsCategoryDao;
@@ -11,7 +12,10 @@ import org.ecommerce.services.interfaces.ServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,8 +24,6 @@ public class CategoriesBrandsService implements ServiceI<CategoriesBrands> {
     CategoriesBrandsDao categoriesBrandsDao;
     @Autowired
     ItemsCategoryDao itemsCategoryDao;
-    @Autowired
-    ItemsBrandsDao itemsBrandsDao;
     @Override
     public int Save(CategoriesBrands categoriesBrands) {
         return 0;
@@ -44,14 +46,12 @@ public class CategoriesBrandsService implements ServiceI<CategoriesBrands> {
 
     public List<CategorysBrandsDto> getCategorysBrands()
     {
-        List<ItemsCategory> itemsCategories=itemsCategoryDao.getAll();
-        List<CategorysBrandsDto> categorysBrandsDtos =itemsCategories.stream().
-                map(c->new CategorysBrandsDto(c.getCategoryId(),c.getCategoryName())).collect(Collectors.toList());
 
-        for (CategorysBrandsDto cbd:categorysBrandsDtos)
-        {
-            cbd.brands=itemsBrandsDao.getbrandList(cbd.categoryId);
-        }
+        List<ItemsCategory> itemsCategories=itemsCategoryDao.getAll();
+        List<Brand> brandList=categoriesBrandsDao.getbrandList(itemsCategories.stream().map(ib->ib.getCategoryId()).collect(Collectors.toList()));
+        List<CategorysBrandsDto> categorysBrandsDtos =itemsCategories.stream().
+                map(c->new CategorysBrandsDto(c.getCategoryId(),c.getCategoryName(),brandList.stream().filter
+                        (b->b.getCategoryId().equals(c.getCategoryId())).collect(Collectors.toMap(Brand::getBrandId,Brand::getBrandName)))).collect(Collectors.toList());
         return categorysBrandsDtos;
     }
 

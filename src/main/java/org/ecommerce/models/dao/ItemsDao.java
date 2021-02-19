@@ -37,6 +37,7 @@ public class ItemsDao implements Dao<Items> {
 
         Session s=sessionFactory.openSession();
         List<Items> itemsList=s.createQuery("from Items").list();
+        s.close();
         return itemsList;
     }
 }

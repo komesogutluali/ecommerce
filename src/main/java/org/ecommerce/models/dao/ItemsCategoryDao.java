@@ -37,8 +37,9 @@ public class ItemsCategoryDao implements Dao<ItemsCategory> {
     @Override
     public List<ItemsCategory> getAll() {
         s=sessionFactory.openSession();
-
-        return s.createQuery("from ItemsCategory").list();
+        List<ItemsCategory> itemsCategories=s.createQuery("from ItemsCategory").list();
+        s.close();
+        return itemsCategories;
     }
 
 }

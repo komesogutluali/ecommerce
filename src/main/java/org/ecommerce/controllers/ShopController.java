@@ -24,7 +24,9 @@ public class ShopController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView shop(ModelAndView mav)
     {
-     mav=new ModelAndView("shop");
+        mav=new ModelAndView("shop");
+        mav.addObject("CategorysBrandsDto", categoriesBrandsService.getCategorysBrands());
+
         return mav;
     }
 

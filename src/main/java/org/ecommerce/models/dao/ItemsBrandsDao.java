@@ -39,14 +39,8 @@ public class ItemsBrandsDao implements Dao<ItemsBrands> {
     public List<ItemsBrands> getAll() {
         s=sessionFactory.openSession();
         List<ItemsBrands> itemsBrands=s.createQuery("from ItemsBrands ").list();
+        s.close();
         return itemsBrands;
     }
-    public List<Brand> getbrandList(int item_category_id)
-    {
 
-        List<Brand> brandList=s.createQuery("select ib.brandName as brandName,ib.brandId as brandId from " +
-                " ItemsBrands as ib inner join CategoriesBrands as cb on ib.brandId=cb.brandsId " +
-                "where cb.categoryId="+item_category_id,Brand.class).list();
-        return brandList;
-    }
 }
