@@ -116,7 +116,6 @@
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
 										<li><a href="<c:url value="/shop"/>" class="active">Products</a></li>
-										<li><a href="<c:url value="/shop/product-details"/>">Product Details</a></li>
 										<li><a href="<c:url value="/shop/checkout"/>">Checkout</a></li>
 										<li><a href="<c:url value="/shop/cart"/>">Cart</a></li>
 										<li><a href="<c:url value="/shop/login"/>">Login</a></li>
