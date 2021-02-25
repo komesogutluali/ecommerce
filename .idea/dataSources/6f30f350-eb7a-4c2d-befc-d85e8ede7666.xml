@@ -1348,9 +1348,9 @@
       <DataType>varchar(650)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="407" parent="339" name="item_image_path">
+    <column id="407" parent="339" name="item_image_name">
       <Position>11</Position>
-      <DataType>varchar(650)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="408" parent="339" name="item_date">

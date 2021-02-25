@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "items")
 public class Items {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
     private Integer itemId;
 
@@ -37,8 +36,8 @@ public class Items {
     @Column(name = "item_description")
     private String itemDescription;
 
-    @Column(name = "item_image_path")
-    private String itemImagePath;
+    @Column(name = "item_image_name")
+    private String itemImageName;
 
     @Column(name = "item_date")
     private java.sql.Date itemDate;
@@ -129,12 +128,12 @@ public class Items {
         this.itemDescription = itemDescription;
     }
 
-    public String getItemImagePath() {
-        return this.itemImagePath;
+    public String getItemImageName() {
+        return this.itemImageName;
     }
 
-    public void setItemImagePath(String itemImagePath) {
-        this.itemImagePath = itemImagePath;
+    public void setItemImageName(String itemImageName) {
+        this.itemImageName = itemImageName;
     }
 
     public java.sql.Date getItemDate() {

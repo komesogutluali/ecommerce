@@ -5,7 +5,11 @@ import org.ecommerce.models.dao.ItemsDao;
 import org.ecommerce.services.interfaces.ServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,7 +36,8 @@ public class ItemsService implements ServiceI<ItemsDto> {
     @Override
     public List<ItemsDto> getAll() {
 
-        List<ItemsDto> itemsDtos=itemsDao.getAll().stream().map(i->new ItemsDto(i.getItemId(),i.getItemName(),i.getItemPrice(),i.getItemDiscountPrice(),i.getItemImagePath())).collect(Collectors.toList());
+        List<ItemsDto> itemsDtos=itemsDao.getAll().stream().map(i->new ItemsDto(i.getItemId(),i.getItemName(),i.getItemPrice(),i.getItemDiscountPrice(),i.getItemImageName())
+        ).collect(Collectors.toList());
         return itemsDtos;
     }
 }

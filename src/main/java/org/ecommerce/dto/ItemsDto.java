@@ -1,18 +1,20 @@
 package org.ecommerce.dto;
 
+import java.awt.image.BufferedImage;
+
 public class ItemsDto {
 
     public  Integer itemId;
     public  String itemName;
     public Double itemPrice;
     public Double itemDiscountPrice;
-    public String itemImagePath;
-    public ItemsDto(Integer itemId, String itemName, Double itemPrice, Double itemDiscountPrice, String itemImagePath) {
+    public String imageName;
+    public ItemsDto(Integer itemId, String itemName, Double itemPrice, Double itemDiscountPrice, String imageName) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemDiscountPrice = itemDiscountPrice;
-        this.itemImagePath = itemImagePath;
+        this.imageName = imageName;
     }
     public Integer getItemId() {
         return itemId;
@@ -46,16 +48,12 @@ public class ItemsDto {
         this.itemDiscountPrice = itemDiscountPrice;
     }
 
-    public String getItemImagePath() {
-        return itemImagePath;
+    public String getItemImageName() {
+        return imageName;
     }
 
-    public void setItemImagePath(String itemImagePath) {
-        this.itemImagePath = itemImagePath;
+    public void setItemImageName(String imageName) {
+        this.imageName = imageName;
     }
-
-
-
-
 
 }
