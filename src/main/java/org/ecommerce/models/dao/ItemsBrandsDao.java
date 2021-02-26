@@ -42,5 +42,12 @@ public class ItemsBrandsDao implements Dao<ItemsBrands> {
         s.close();
         return itemsBrands;
     }
-
+    public  ItemsBrands getBrand(Integer brand_id)
+    {
+        s=sessionFactory.openSession();
+        ItemsBrands itemsBrands= (ItemsBrands) s.createQuery
+                ("from ItemsBrands  where brandId=:brandId").setParameter("brandId",brand_id).uniqueResult();
+        s.close();
+        return itemsBrands;
+    }
 }

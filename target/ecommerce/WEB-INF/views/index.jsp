@@ -292,7 +292,7 @@
 										<h2><fmt:formatNumber  type="number" value="${item.itemPrice}" maxIntegerDigits="2"/></h2>
 										<p>${item.itemName}</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-										<a href="" class="btn btn-default add-to-cart">Product details</a>
+										<a href="<c:url value="/shop/product-details/${item.itemId.intValue()}"/>" class="btn btn-default add-to-cart">Product details</a>
 
 									</div>
 								</div>

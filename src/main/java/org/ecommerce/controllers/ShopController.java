@@ -5,9 +5,7 @@ import org.ecommerce.services.ItemsService;
 import org.ecommerce.services.MembersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -30,11 +28,11 @@ public class ShopController {
         return mav;
     }
 
-    @RequestMapping(value = "/product-details", method = RequestMethod.GET)
-    public ModelAndView product_details(ModelAndView mav) {
+    @RequestMapping(value = "/product-details/{item_id}", method = RequestMethod.GET)
+    public ModelAndView product_details(ModelAndView mav, @PathVariable int item_id) {
         mav=new ModelAndView("product-details");
-        mav.addObject("itemsDtos",itemsService.getAll());
         mav.addObject("CategorysBrandsDto",categoriesBrandsService.getCategorysBrands());
+        mav.addObject("itemDto",itemsService.getItem(item_id));
         return mav;
     }
     @RequestMapping(value = "/checkout",method = RequestMethod.GET)

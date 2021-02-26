@@ -251,11 +251,10 @@
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
 								<img src="${pageContext.request.contextPath}/resources/images/product-details/new.jpg" class="newarrival" alt="" />
-								<h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-								<p>Web ID: 1089772</p>
-								<img src="${pageContext.request.contextPath}/resources/images/product-details/rating.png" alt="" />
+								<h2>${itemDto.itemName}</h2>
+								<img src="${pageContext.request.contextPath}/item_images/${itemDto.itemImageName}.jpg" alt="" />
 								<span>
-									<span>US $59</span>
+									<span>${itemDto.itemPrice}</span>
 									<label>Quantity:</label>
 									<input type="text" value="3" />
 									<button type="button" class="btn btn-fefault cart">
@@ -265,7 +264,7 @@
 								</span>
 								<p><b>Availability:</b> In Stock</p>
 								<p><b>Condition:</b> New</p>
-								<p><b>Brand:</b> E-SHOPPER</p>
+								<p><b>Brand:</b>${itemDto.brandName}</p>
 								<a href=""><img src="${pageContext.request.contextPath}/resources/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
 							</div><!--/product-information-->
 						</div>

@@ -17,6 +17,7 @@ public class ItemsDao implements Dao<Items> {
 
     @Autowired
     SessionFactory sessionFactory;
+    Session s;
     @Override
     public int Save(Items items) {
         return 0;
@@ -35,9 +36,16 @@ public class ItemsDao implements Dao<Items> {
     @Override
     public List<Items> getAll() {
 
-        Session s=sessionFactory.openSession();
+        s=sessionFactory.openSession();
         List<Items> itemsList=s.createQuery("from Items").list();
         s.close();
         return itemsList;
+    }
+    public Items getItem(int item_id)
+    {
+        s=sessionFactory.openSession();
+        Items items= (Items) s.createQuery(" from Items where itemId=:itemId").setParameter("itemId",item_id).uniqueResult();
+        s.close();
+        return items;
     }
 }

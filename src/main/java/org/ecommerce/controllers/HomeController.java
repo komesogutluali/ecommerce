@@ -30,9 +30,8 @@ public class HomeController {
     public ModelAndView home(ModelAndView mav)
     {
         mav=new ModelAndView("index");
-        mav.addObject("itemsDtos",itemsService.getAll());
+        mav.addObject("itemsDtos",itemsService.getAllDto());
         mav.addObject("CategorysBrandsDto", categoriesBrandsService.getCategorysBrands());
-        mav.addObject("brandsCount",itemsBrandsService.getBrandsCount());
         return mav;
     }
 

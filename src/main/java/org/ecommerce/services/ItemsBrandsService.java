@@ -43,6 +43,10 @@ public class ItemsBrandsService implements ServiceI<ItemsBrands> {
         List<ItemsBrands> itemsBrands=getAll();
         Map<String,Long> brandCount=itemsDao.getAll().stream().collect(Collectors.groupingBy(i->i.getItemBrandId(),Collectors.counting())).entrySet()
                 .stream().collect(Collectors.toMap((key)->itemsBrands.stream().filter(ib->ib.getBrandId().equals(key.getKey())).findFirst().get().getBrandName(),(value)->value.getValue()));
-  return brandCount;
+       return brandCount;
+    }
+    public  ItemsBrands getBrand(Integer brand_id)
+    {
+        return itemsBrandsDao.getBrand(brand_id);
     }
 }
