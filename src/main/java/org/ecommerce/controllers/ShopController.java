@@ -60,5 +60,11 @@ public class ShopController {
        ModelAndView mav=new ModelAndView("cart");
         return mav;
     }
-
+    @RequestMapping(value = "/brands_items",method = RequestMethod.GET)
+    public @ResponseBody ModelAndView brands_item_get(@RequestParam int brand_id,@RequestParam int category_id)
+    {
+           ModelAndView mav=new ModelAndView("brands_items");
+             mav.addObject("itemsDtos",itemsService.getAllDto(category_id,brand_id));
+             return mav;
+    }
 }

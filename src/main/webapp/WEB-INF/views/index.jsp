@@ -230,7 +230,7 @@
 								<div class="panel-body">
 									<ul>
 										<c:forEach items="${cbd.brands}" var="brand">
-										<li><a href="#">${brand.value} </a></li>
+										<li><button style="padding: 0;border: none;background:none;"  onclick="click_item('${cbd.categoryId.intValue()}','${brand.key.intValue()}')">${brand.value} </button></li>
 										</c:forEach>
 									</ul>
 								</div>
@@ -274,7 +274,7 @@
 			</div>
 
 			<div class="col-sm-9 padding-right">
-				<div class="features_items"><!--features_items-->
+				<div class="features_items" ><!--features_items-->
 					<h2 class="title text-center">Features Items</h2>
 
 					<c:forEach items="${itemsDtos}"  var="item">
@@ -864,5 +864,7 @@
 <script src="${pageContext.request.contextPath}/resources/js/price-range.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/custom_js/brand_click_item.js"></script>
+
 </body>
 </html>

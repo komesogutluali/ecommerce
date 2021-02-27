@@ -41,6 +41,14 @@ public class ItemsDao implements Dao<Items> {
         s.close();
         return itemsList;
     }
+    public List<Items> getAll(int category_id,int brand_id) {
+
+        s=sessionFactory.openSession();
+        List<Items> itemsList=s.createQuery("from Items where itemCategoryId=:itemCategoryId and itemBrandId=:itemBrandId").
+                setParameter("itemCategoryId",category_id).setParameter("itemBrandId",brand_id).getResultList();
+        s.close();
+        return itemsList;
+    }
     public Items getItem(int item_id)
     {
         s=sessionFactory.openSession();

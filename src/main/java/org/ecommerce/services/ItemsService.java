@@ -50,6 +50,12 @@ public class ItemsService implements ServiceI<Items> {
         ).collect(Collectors.toList());
         return itemsDtos;
     }
+    public List<ItemsDto> getAllDto(int category_id,int brand_id) {
+
+        List<ItemsDto> itemsDtos=itemsDao.getAll(category_id,brand_id).stream().map(i->new ItemsDto(i.getItemId(),i.getItemName(),i.getItemPrice(),i.getItemDiscountPrice(),i.getItemImageName())
+        ).collect(Collectors.toList());
+        return itemsDtos;
+    }
     public ItemDetailsDto getItem(int item_id)
     {
         Items items=itemsDao.getItem(item_id);

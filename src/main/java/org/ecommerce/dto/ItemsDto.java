@@ -1,7 +1,5 @@
 package org.ecommerce.dto;
 
-import java.awt.image.BufferedImage;
-
 public class ItemsDto {
 
     public  Integer itemId;
