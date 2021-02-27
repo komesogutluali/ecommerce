@@ -1,31 +1,31 @@
 package org.ecommerce.models.dao;
 
 import org.ecommerce.models.dao.interfaces.Dao;
-import org.ecommerce.models.entity.ItemWI;
+import org.ecommerce.models.entity.ItemWL;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 @Repository
 @Transactional
-public class ItemWIDao implements Dao<ItemWI> {
+public class ItemWIDao implements Dao<ItemWL> {
     @Override
-    public int Save(ItemWI itemWI) {
+    public int Save(ItemWL itemWI) {
         return 0;
     }
 
     @Override
-    public int Update(ItemWI itemWI) {
+    public int Update(ItemWL itemWI) {
         return 0;
     }
 
     @Override
-    public int Delete(ItemWI itemWI) {
+    public int Delete(ItemWL itemWI) {
         return 0;
     }
 
     @Override
-    public List<ItemWI> getAll() {
+    public List<ItemWL> getAll() {
         return null;
     }
 }

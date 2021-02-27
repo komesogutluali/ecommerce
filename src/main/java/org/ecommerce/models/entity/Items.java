@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "items")
 public class Items {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "item_id")
     private Integer itemId;
 
@@ -17,21 +18,6 @@ public class Items {
 
     @Column(name = "item_discount_price")
     private Double itemDiscountPrice;
-
-    @Column(name = "item_small_count")
-    private Integer itemSmallCount;
-
-    @Column(name = "item_medium_count")
-    private Integer itemMediumCount;
-
-    @Column(name = "item_large_count")
-    private Integer itemLargeCount;
-
-    @Column(name = "item_extralarge_count")
-    private Integer itemExtralargeCount;
-
-    @Column(name = "item_extraextralarge_count")
-    private Integer itemExtraextralargeCount;
 
     @Column(name = "item_description")
     private String itemDescription;
@@ -78,46 +64,6 @@ public class Items {
 
     public void setItemDiscountPrice(Double itemDiscountPrice) {
         this.itemDiscountPrice = itemDiscountPrice;
-    }
-
-    public Integer getItemSmallCount() {
-        return this.itemSmallCount;
-    }
-
-    public void setItemSmallCount(Integer itemSmallCount) {
-        this.itemSmallCount = itemSmallCount;
-    }
-
-    public Integer getItemMediumCount() {
-        return this.itemMediumCount;
-    }
-
-    public void setItemMediumCount(Integer itemMediumCount) {
-        this.itemMediumCount = itemMediumCount;
-    }
-
-    public Integer getItemLargeCount() {
-        return this.itemLargeCount;
-    }
-
-    public void setItemLargeCount(Integer itemLargeCount) {
-        this.itemLargeCount = itemLargeCount;
-    }
-
-    public Integer getItemExtralargeCount() {
-        return this.itemExtralargeCount;
-    }
-
-    public void setItemExtralargeCount(Integer itemExtralargeCount) {
-        this.itemExtralargeCount = itemExtralargeCount;
-    }
-
-    public Integer getItemExtraextralargeCount() {
-        return this.itemExtraextralargeCount;
-    }
-
-    public void setItemExtraextralargeCount(Integer itemExtraextralargeCount) {
-        this.itemExtraextralargeCount = itemExtraextralargeCount;
     }
 
     public String getItemDescription() {

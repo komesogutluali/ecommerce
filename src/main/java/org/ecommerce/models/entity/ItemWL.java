@@ -1,12 +1,13 @@
 package org.ecommerce.models.entity;
 
+import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "item_w_i")
-public class ItemWI {
+@Table(name = "item_w_l")
+public class ItemWL {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "item_w_I_id")
     private Integer itemWIId;
 
@@ -15,6 +16,9 @@ public class ItemWI {
 
     @Column(name = "size_I_id")
     private Integer sizeIId;
+
+    @Column(name = "item_count")
+    private Integer itemCount;
 
     @Column(name = "item_id")
     private Integer itemId;
@@ -41,6 +45,14 @@ public class ItemWI {
 
     public void setSizeIId(Integer sizeIId) {
         this.sizeIId = sizeIId;
+    }
+
+    public Integer getItemCount() {
+        return this.itemCount;
+    }
+
+    public void setItemCount(Integer itemCount) {
+        this.itemCount = itemCount;
     }
 
     public Integer getItemId() {

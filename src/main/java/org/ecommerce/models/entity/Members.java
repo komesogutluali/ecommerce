@@ -1,13 +1,12 @@
 package org.ecommerce.models.entity;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
-
 import javax.persistence.*;
+
 @Entity
 @Table(name = "members")
 public class Members {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "members_id")
     private Integer membersId;
 
