@@ -247,13 +247,9 @@
 						<h2>Brands</h2>
 						<div class="brands-name">
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-								<li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-								<li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-								<li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-								<li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-								<li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-								<li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+								<c:forEach items="${brandCounts}" var="bc">
+									<li><button style="padding: 0;border: none;background:none;"  onclick="click_item('${bc.brandId}')"> <span class="pull-right">(${bc.brand_count})</span>${bc.brandName}</button></li>
+								</c:forEach>
 							</ul>
 						</div>
 					</div><!--/brands_products-->
@@ -865,6 +861,7 @@
 <script src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/custom_js/brand_click_item.js"></script>
+<script src="${pageContext.request.contextPath}/resources/custom_js/brand_get_item.js"></script>
 
 </body>
 </html>

@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "item_body_size_item")
 public class ItemBodySizeItem {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "body_size_item_id")
     private Integer bodySizeItemId;
 
@@ -16,8 +15,8 @@ public class ItemBodySizeItem {
     @Column(name = "item_id")
     private Integer itemId;
 
-    @Column(name = "count")
-    private Integer count;
+    @Column(name = "item_count")
+    private Integer itemCount;
 
     public Integer getBodySizeItemId() {
         return this.bodySizeItemId;
@@ -43,11 +42,11 @@ public class ItemBodySizeItem {
         this.itemId = itemId;
     }
 
-    public Integer getCount() {
-        return this.count;
+    public Integer getItemCount() {
+        return this.itemCount;
     }
 
-    public void setCount(Integer count) {
-        this.count = count;
+    public void setItemCount(Integer itemCount) {
+        this.itemCount = itemCount;
     }
 }

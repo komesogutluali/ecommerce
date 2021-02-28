@@ -1,5 +1,6 @@
 package org.ecommerce.services;
 
+import org.ecommerce.dto.BrandCount;
 import org.ecommerce.models.dao.ItemsBrandsDao;
 import org.ecommerce.models.dao.ItemsDao;
 import org.ecommerce.models.entity.ItemsBrands;
@@ -38,12 +39,9 @@ public class ItemsBrandsService implements ServiceI<ItemsBrands> {
 
         return itemsBrandsDao.getAll();
     }
-    public Map<String,Long> getBrandsCount()
+    public List<BrandCount> getCount()
     {
-        List<ItemsBrands> itemsBrands=getAll();
-        Map<String,Long> brandCount=itemsDao.getAll().stream().collect(Collectors.groupingBy(i->i.getItemBrandId(),Collectors.counting())).entrySet()
-                .stream().collect(Collectors.toMap((key)->itemsBrands.stream().filter(ib->ib.getBrandId().equals(key.getKey())).findFirst().get().getBrandName(),(value)->value.getValue()));
-       return brandCount;
+        return itemsBrandsDao.getCount();
     }
     public  ItemsBrands getBrand(Integer brand_id)
     {

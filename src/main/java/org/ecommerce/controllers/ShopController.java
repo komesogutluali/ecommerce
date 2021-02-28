@@ -1,14 +1,13 @@
 package org.ecommerce.controllers;
 import org.ecommerce.models.entity.Members;
 import org.ecommerce.services.CategoriesBrandsService;
+import org.ecommerce.services.ItemsBrandsService;
 import org.ecommerce.services.ItemsService;
 import org.ecommerce.services.MembersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-
 
 @Controller
 @RequestMapping(value = "/shop")
@@ -18,11 +17,15 @@ public class ShopController {
     @Autowired
     private CategoriesBrandsService categoriesBrandsService;
     @Autowired
-    ItemsService itemsService;
+    private ItemsService itemsService;
+    @Autowired
+    private ItemsBrandsService itemsBrandsService;
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView shop(ModelAndView mav)
     {
         mav=new ModelAndView("shop");
+        mav.addObject("brandCounts", itemsBrandsService.getCount());
+        mav.addObject("itemsDtos",itemsService.getAllDto());
         mav.addObject("CategorysBrandsDto", categoriesBrandsService.getCategorysBrands());
 
         return mav;
@@ -33,6 +36,8 @@ public class ShopController {
         mav=new ModelAndView("product-details");
         mav.addObject("CategorysBrandsDto",categoriesBrandsService.getCategorysBrands());
         mav.addObject("itemDto",itemsService.getItem(item_id));
+        mav.addObject("brandCounts", itemsBrandsService.getCount());
+
         return mav;
     }
     @RequestMapping(value = "/checkout",method = RequestMethod.GET)
@@ -66,5 +71,12 @@ public class ShopController {
            ModelAndView mav=new ModelAndView("brands_items");
              mav.addObject("itemsDtos",itemsService.getAllDto(category_id,brand_id));
              return mav;
+    }
+    @RequestMapping(value = "/brands_items_all",method = RequestMethod.GET)
+    public @ResponseBody ModelAndView brands_items_all(@RequestParam int brand_id)
+    {
+        ModelAndView mav=new ModelAndView("items");
+        mav.addObject("itemsDtos",itemsService.getBrandAll(brand_id));
+        return mav;
     }
 }

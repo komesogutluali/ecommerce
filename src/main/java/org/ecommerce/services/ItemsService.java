@@ -61,4 +61,10 @@ public class ItemsService implements ServiceI<Items> {
         Items items=itemsDao.getItem(item_id);
       return new ItemDetailsDto(items.getItemId(),items.getItemName(),items.getItemPrice(),items.getItemDiscountPrice(),items.getItemImageName(),items.getItemDescription(),itemsBrandsService.getBrand(items.getItemBrandId()).getBrandName(),"asdsdasd");
     }
+    public List<ItemsDto> getBrandAll(int brand_id) {
+
+        List<ItemsDto> itemsDtos=itemsDao.getAll(brand_id).stream().map(i->new ItemsDto(i.getItemId(),i.getItemName(),i.getItemPrice(),i.getItemDiscountPrice(),i.getItemImageName())
+        ).collect(Collectors.toList());
+        return itemsDtos;
+    }
 }

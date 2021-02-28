@@ -1,6 +1,7 @@
 package org.ecommerce.models.dao;
 
 
+import org.ecommerce.dto.BrandCount;
 import org.ecommerce.models.Brand;
 import org.ecommerce.models.dao.interfaces.Dao;
 import org.ecommerce.models.entity.ItemsBrands;
@@ -41,6 +42,16 @@ public class ItemsBrandsDao implements Dao<ItemsBrands> {
         List<ItemsBrands> itemsBrands=s.createQuery("from ItemsBrands ").list();
         s.close();
         return itemsBrands;
+    }
+    public List<BrandCount> getCount()
+    {
+        s=sessionFactory.openSession();
+        List<BrandCount> brandCounts=s.createQuery("SELECT new org.ecommerce.dto.BrandCount(ib.brandId,ib.brandName,(COALESCE(sum(ibs.itemCount),0)+COALESCE(sum(wl.itemCount),0))) from Items i " +
+                "inner join ItemsBrands as ib on ib.brandId=i.itemBrandId  " +
+                "left join ItemBodySizeItem as ibs on ibs.itemId=i.itemId " +
+                "left join ItemWL as wl on wl.itemId=i.itemId GROUP by ib.brandId",BrandCount.class).getResultList();
+        s.close();
+        return brandCounts;
     }
     public  ItemsBrands getBrand(Integer brand_id)
     {
