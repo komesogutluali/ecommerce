@@ -209,7 +209,7 @@
 					<div class="product-details"><!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="${pageContext.request.contextPath}/resources/images/product-details/1.jpg" alt="" />
+								<img src="${pageContext.request.contextPath}/item_images/${itemDto.itemImageName}.jpg" alt="" />
 								<h3>ZOOM</h3>
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -248,7 +248,6 @@
 							<div class="product-information"><!--/product-information-->
 								<img src="${pageContext.request.contextPath}/resources/images/product-details/new.jpg" class="newarrival" alt="" />
 								<h2>${itemDto.itemName}</h2>
-								<img src="${pageContext.request.contextPath}/item_images/${itemDto.itemImageName}.jpg" alt="" />
 								<span>
 									<span>${itemDto.itemPrice}</span>
 									<label>Quantity:</label>
@@ -261,7 +260,21 @@
 								<p><b>Availability:</b> In Stock</p>
 								<p><b>Condition:</b> New</p>
 								<p><b>Brand:</b>${itemDto.brandName}</p>
-								<a href=""><img src="${pageContext.request.contextPath}/resources/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+								<div style=" width: 100%;height: 60px;margin-bottom: -58px;">
+									<div style=" width: 48%;height: 60px;margin-bottom: -58px;float: left;">
+<select name="listw" onchange="click_wsize(value)">
+	<c:forEach items="${itemDto.wSize}" var="wsize">
+	<option value="${wsize.key.intValue()}+${itemDto.itemId.intValue()}">${wsize.value}</option>
+	</c:forEach>
+</select>
+									</div>
+									<div style="width: 48%;height: 60px;margin-bottom: -58px; float: right;">
+										<select name="listl" id="listl">
+
+										</select>
+									</div>
+								</div>
+
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->
@@ -719,5 +732,7 @@
 	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/custom_js/get_post.js"></script>
+
 </body>
 </html>

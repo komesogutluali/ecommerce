@@ -39,6 +39,16 @@ public class ItemBodySizeItemDao implements Dao<ItemBodySizeItem> {
     {
       s=sessionFactory.openSession();
       int count=(int)s.createQuery("select  sum(itemCount) from ItemBodySizeItem where itemId=:itemId").setParameter("itemId",item_id).uniqueResult();
+      s.close();
       return count;
     }
+    public List<ItemBodySizeItem> getItemIDW(int item_id)
+    {
+        s= sessionFactory.openSession();
+        List<ItemBodySizeItem> itemBodySizeItems=s.createQuery("from ItemBodySizeItem where itemId=:itemId").
+                setParameter("itemId",item_id).list();
+        s.close();
+        return itemBodySizeItems;
+    }
+
 }

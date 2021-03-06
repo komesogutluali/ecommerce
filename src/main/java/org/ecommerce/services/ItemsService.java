@@ -2,7 +2,11 @@ package org.ecommerce.services;
 
 import org.ecommerce.dto.ItemDetailsDto;
 import org.ecommerce.dto.ItemsDto;
+import org.ecommerce.models.dao.ItemBodySizeItemDao;
 import org.ecommerce.models.dao.ItemsDao;
+import org.ecommerce.models.entity.ItemBodySizeItem;
+import org.ecommerce.models.entity.ItemSizeW;
+import org.ecommerce.models.entity.ItemWL;
 import org.ecommerce.models.entity.Items;
 import org.ecommerce.services.interfaces.ServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +16,9 @@ import org.springframework.ui.ModelMap;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,7 +29,13 @@ public class ItemsService implements ServiceI<Items> {
     @Autowired
     private  ItemsBrandsService itemsBrandsService;
     @Autowired
-    CommentService commentService;
+    private CommentService commentService;
+    @Autowired
+    private ItemBodySizeItemService itemBodySizeItemService;
+    @Autowired
+    private ItemSizeWService itemSizeWService;
+    @Autowired
+    private itemWIService itemWIService;
     @Override
     public int Save(Items items) {
         return 0;
@@ -59,7 +71,15 @@ public class ItemsService implements ServiceI<Items> {
     public ItemDetailsDto getItem(int item_id)
     {
         Items items=itemsDao.getItem(item_id);
-      return new ItemDetailsDto(items.getItemId(),items.getItemName(),items.getItemPrice(),items.getItemDiscountPrice(),items.getItemImageName(),items.getItemDescription(),itemsBrandsService.getBrand(items.getItemBrandId()).getBrandName(),"asdsdasd");
+        List<ItemSizeW> itemSizeWList=itemSizeWService.getAll();
+        List<ItemWL> itemWLS= itemWIService.getWList(item_id);
+        Map<Integer,String> itemWlsList=new HashMap<Integer,String>();
+        itemWLS.forEach(wls->itemWlsList.put(wls.getSizeWId(),itemSizeWList.stream().filter(isw->isw.getItemSizeWId().equals(wls.getSizeWId())).findFirst().get().getItemSizeName()));
+        ItemDetailsDto itemDetailsDto=new ItemDetailsDto(items.getItemId(),items.getItemName(),items.getItemPrice(),items.getItemDiscountPrice(),items.getItemImageName(),
+                items.getItemDescription(),itemsBrandsService.
+                getBrand(items.getItemBrandId()).getBrandName(),"asdsdasd",items.getItemType());
+        itemDetailsDto.setwSize(itemWlsList);
+        return itemDetailsDto;
     }
     public List<ItemsDto> getBrandAll(int brand_id) {
 

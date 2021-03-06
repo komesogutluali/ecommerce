@@ -230,7 +230,7 @@
 								<div class="panel-body">
 									<ul>
 										<c:forEach items="${cbd.brands}" var="brand">
-										<li><button style="padding: 0;border: none;background:none;"  onclick="click_item('${cbd.categoryId.intValue()}','${brand.key.intValue()}')">${brand.value} </button></li>
+										<li><button  onclick="category_brand_click('${cbd.categoryId.intValue()}','${brand.key.intValue()}')"> ${brand.value} </button></li>
 										</c:forEach>
 									</ul>
 								</div>
@@ -281,13 +281,12 @@
 									<img src="${pageContext.request.contextPath}/item_images/${item.itemImageName}.jpg" alt="" />
 									<h2>${item.itemPrice}</h2>
 									<p>${item.itemName}</p>
-									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 								</div>
 								<div class="product-overlay">
 									<div class="overlay-content">
 										<h2><fmt:formatNumber  type="number" value="${item.itemPrice}" maxIntegerDigits="2"/></h2>
 										<p>${item.itemName}</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<button  class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
 										<a href="<c:url value="/shop/product-details/${item.itemId.intValue()}"/>" class="btn btn-default add-to-cart">Product details</a>
 
 									</div>
@@ -860,8 +859,7 @@
 <script src="${pageContext.request.contextPath}/resources/js/price-range.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.prettyPhoto.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-<script src="${pageContext.request.contextPath}/resources/custom_js/brand_click_item.js"></script>
-<script src="${pageContext.request.contextPath}/resources/custom_js/brand_get_item.js"></script>
+<script src="${pageContext.request.contextPath}/resources/custom_js/get_post.js"></script>
 
 </body>
 </html>

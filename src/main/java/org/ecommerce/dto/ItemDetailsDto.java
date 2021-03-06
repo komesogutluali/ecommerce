@@ -1,5 +1,8 @@
 package org.ecommerce.dto;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ItemDetailsDto {
     private   Integer itemId;
     private  String itemName;
@@ -9,7 +12,10 @@ public class ItemDetailsDto {
     private String itemDescription;
     private String brandName;
     private String comment_description;
-    public ItemDetailsDto(Integer itemId, String itemName, Double itemPrice, Double itemDiscountPrice, String imageName, String itemDescription, String brandName, String comment_description) {
+    private Integer itemsType;
+    private Map<Integer,String> wSize;
+
+    public ItemDetailsDto(Integer itemId, String itemName, Double itemPrice, Double itemDiscountPrice, String imageName, String itemDescription, String brandName, String comment_description,Integer itemsType) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
@@ -18,8 +24,22 @@ public class ItemDetailsDto {
         this.itemDescription = itemDescription;
         this.brandName = brandName;
         this.comment_description = comment_description;
+        this.itemsType=itemsType;
+    }
+    public Map<Integer, String> getwSize() {
+        return wSize;
     }
 
+    public void setwSize(Map<Integer, String> wSize) {
+        this.wSize = wSize;
+    }
+    public Integer getItemsType() {
+        return itemsType;
+    }
+
+    public void setItemsType(Integer itemsType) {
+        this.itemsType = itemsType;
+    }
     public String getImageName() {
         return imageName;
     }

@@ -28,6 +28,9 @@ public class Items {
     @Column(name = "item_date")
     private java.sql.Date itemDate;
 
+    @Column(name = "item_type")
+    private Integer itemType;
+
     @Column(name = "item_category_id")
     private Integer itemCategoryId;
 
@@ -88,6 +91,14 @@ public class Items {
 
     public void setItemDate(java.sql.Date itemDate) {
         this.itemDate = itemDate;
+    }
+
+    public Integer getItemType() {
+        return this.itemType;
+    }
+
+    public void setItemType(Integer itemType) {
+        this.itemType = itemType;
     }
 
     public Integer getItemCategoryId() {

@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Controller
 @RequestMapping(value = "/shop")
 public class ShopController {
@@ -79,4 +82,5 @@ public class ShopController {
         mav.addObject("itemsDtos",itemsService.getBrandAll(brand_id));
         return mav;
     }
+
 }

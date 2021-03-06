@@ -42,4 +42,20 @@ public class ItemWIDao implements Dao<ItemWL> {
         s.close();
         return count;
     }
+    public List<ItemWL> getWList(int item_id)
+    {
+        s=sessionFactory.openSession();
+        List<ItemWL> itemWLS=s.createQuery("from ItemWL where itemId=:itemId").setParameter("itemId",item_id).list();
+        s.close();
+        return itemWLS;
+    }
+    public List<ItemWL> getSizeL(int wsize_id,int item_id)
+    {
+      s=sessionFactory.openSession();
+      List<ItemWL>  itemWLS=s.createQuery("from ItemWL where itemId=:itemId and sizeWId=:sizeWId")
+              .setParameter("itemId",item_id).setParameter("sizeWId",wsize_id).list();
+      s.close();
+      return itemWLS;
+    }
+
 }
