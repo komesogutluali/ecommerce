@@ -252,7 +252,7 @@
 									<span>${itemDto.itemPrice}</span>
 									<label>Quantity:</label>
 									<input type="text" value="3" />
-									<button type="button" class="btn btn-fefault cart">
+									<button type="button" class="btn btn-fefault cart " onclick='addto_cart()'>
 										<i class="fa fa-shopping-cart"></i>
 										Add to cart
 									</button>
@@ -262,7 +262,7 @@
 								<p><b>Brand:</b>${itemDto.brandName}</p>
 								<div style=" width: 100%;height: 60px;margin-bottom: -58px;">
 									<div style=" width: 48%;height: 60px;margin-bottom: -58px;float: left;">
-<select name="listw" onchange="click_wsize(value)">
+<select name="listw" id="listw" onchange="click_wsize(value)">
 	<c:forEach items="${itemDto.wSize}" var="wsize">
 	<option value="${wsize.key.intValue()}+${itemDto.itemId.intValue()}">${wsize.value}</option>
 	</c:forEach>

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.ecommerce.dto.CategorysBrandsDto;
+import org.ecommerce.models.Basket;
 import org.ecommerce.models.entity.ItemsBrands;
 import org.ecommerce.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +22,7 @@ import java.util.Map;
 @RequestMapping(value = "/index")
 public class HomeController {
 
+    private  HttpSession httpSession;
     @Autowired
     ItemsService itemsService;
     @Autowired
@@ -43,10 +46,23 @@ public class HomeController {
         return mav;
     }
     @RequestMapping(value = "/AddToCart",method = RequestMethod.POST)
-    public @ResponseBody ModelAndView AddtoCart(HttpSession httpSession)
+    public @ResponseBody void AddtoCart(@RequestParam int item_id,@RequestParam int wsize_id,@RequestParam int lsize_id)
     {
-        ModelAndView mav=new ModelAndView("");
-        return mav;
+        if(httpSession.equals(null))
+        {
+            httpSession.isNew();
+            List<Basket> baskets=new ArrayList<>();
+            baskets.add(new Basket(item_id,wsize_id,lsize_id));
+           httpSession.setAttribute("item",baskets);
+        }
+        else
+        {
+            List<Basket> baskets= (List<Basket>) httpSession.getAttribute("item");
+            baskets.add(new Basket(item_id,wsize_id,lsize_id));
+            httpSession.setAttribute("item",baskets);
+        }
+
+
     }
     @RequestMapping(value = "/click_wsize_select",method = RequestMethod.GET)
     public @ResponseBody
