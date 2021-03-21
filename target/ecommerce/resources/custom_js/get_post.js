@@ -83,10 +83,11 @@ function addto_cart() {
     var wsize_id=parseInt(wlsize[0]);
     var item_id=parseInt(wlsize[1]);
     var lsize_id=parseInt($("#listl  :selected").val());
+    alert(wlsize+"  "+wsize_id+"   "+item_id+"   "+lsize_id);
     $.ajax({
-        type:'POST',
+        type:'GET',
         contentType: "application/json",
-        url: "http://localhost:8080/ecommerce_war_exploded/index/AddToCart",
+        url: "http://localhost:8080/ecommerce_war_exploded/index/add_to_cart",
         data:{'item_id':item_id,'wsize_id':wsize_id,'lsize_id':lsize_id},
         success:function(data, status){
 

@@ -8,10 +8,12 @@ import org.ecommerce.models.Basket;
 import org.ecommerce.models.entity.ItemsBrands;
 import org.ecommerce.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,12 +47,12 @@ public class HomeController {
         mav.addObject("CategorysBrandsDto", categoriesBrandsService.getCategorysBrands());
         return mav;
     }
-    @RequestMapping(value = "/AddToCart",method = RequestMethod.POST)
-    public @ResponseBody void AddtoCart(@RequestParam int item_id,@RequestParam int wsize_id,@RequestParam int lsize_id)
+    @RequestMapping(value = "/add_to_cart",method = RequestMethod.GET)
+    public  void AddtoCart(@RequestParam int item_id, @RequestParam int wsize_id, @RequestParam int lsize_id, HttpServletRequest httpServletRequest)
     {
-        if(httpSession.equals(null))
-        {
-            httpSession.isNew();
+        httpSession=httpServletRequest.getSession();
+        if( httpSession.getAttribute("item")== null){
+
             List<Basket> baskets=new ArrayList<>();
             baskets.add(new Basket(item_id,wsize_id,lsize_id));
            httpSession.setAttribute("item",baskets);
